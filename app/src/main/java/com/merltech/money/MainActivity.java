@@ -73,6 +73,12 @@ public class MainActivity extends Activity {
         startActivityForResult(intent, 0);
     }
 
+    public void ShowChartOverview(View view)
+    {
+        Intent intent = new Intent(view.getContext(), ChartOverviewActivity.class);
+        startActivityForResult(intent, 0);
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         if(resultCode != RESULT_OK)
@@ -94,9 +100,9 @@ public class MainActivity extends Activity {
     {
         int total_amount = database.getTotal();
         TextView total_expenses_label = (TextView)findViewById(R.id.totalTextView);
-        total_expenses_label.setText(Integer.toString(total_amount/100) + "." + Integer.toString((total_amount - ((total_amount/100)*100))) + " €");
+        total_expenses_label.setText(String.format("%d.%02d €", total_amount/100, (total_amount - ((total_amount/100)*100))));
         categories.clear();
-        categories.addAll(database.getCategories());
+        categories.addAll(database.getCategoriesOrderedByCount());
         categoryAdapter.notifyDataSetChanged();
     }
 }

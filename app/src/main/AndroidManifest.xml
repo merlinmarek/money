@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".AddCategoryActivity" />
         <activity android:name=".AddExpenseActivity" />
-        <activity android:name=".ListOverviewActivity"></activity>
+        <activity android:name=".ListOverviewActivity" />
+        <activity android:name=".ChartOverviewActivity"></activity>
     </application>
 
 </manifest>

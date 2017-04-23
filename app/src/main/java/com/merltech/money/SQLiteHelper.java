@@ -195,7 +195,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
     {
         List<String> categories = new LinkedList<String>();
 
-        String query = "SELECT c.category, sum(t.amount) FROM categories c JOIN transactions t ON (c.category = t.category) GROUP BY c.category ORDER BY 2 DESC;";
+        String query = "SELECT c.category, sum(t.amount) FROM categories c LEFT JOIN transactions t ON (c.category = t.category) GROUP BY c.category ORDER BY 2 DESC;";
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -218,7 +218,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
     {
         List<String> categories = new LinkedList<String>();
 
-        String query = "SELECT c.category, count(t.category) FROM categories c JOIN transactions t ON (c.category = t.category) GROUP BY c.category ORDER BY 2 DESC;";
+        String query = "SELECT c.category, count(t.category) FROM categories c LEFT JOIN transactions t ON (c.category = t.category) GROUP BY c.category ORDER BY 2 DESC;";
 
         SQLiteDatabase db = this.getWritableDatabase();
 

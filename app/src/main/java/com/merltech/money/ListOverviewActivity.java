@@ -7,11 +7,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ListOverviewActivity extends Activity {
@@ -62,7 +59,6 @@ public class ListOverviewActivity extends Activity {
             timestamp.setText("time");
             category.setText(transaction.category);
             description.setText(transaction.description);
-            //amount.setText(Integer.toString(transaction.amount/100) + "." + Integer.toString((transaction.amount - ((transaction.amount/100)*100))) + " €");
             amount.setText(String.format("%d.%02d €", transaction.amount/100, (transaction.amount - ((transaction.amount/100)*100))));
             row.setBackgroundColor(i++%2 == 0 ?  Color.rgb(216, 216, 216) : Color.rgb(230, 230, 230));
 
