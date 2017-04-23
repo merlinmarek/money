@@ -31,8 +31,8 @@ public class ListOverviewActivity extends Activity {
             TextView description = (TextView) row.findViewById(R.id.descriptionTextView);
             TextView amount = (TextView) row.findViewById(R.id.amountTextView);
 
-            id.setText("ID");
-            timestamp.setText("Date");
+            //id.setText("ID");
+            //timestamp.setText("Date");
             category.setText("Category");
             description.setText("Description");
             amount.setText("Amount");
@@ -55,8 +55,8 @@ public class ListOverviewActivity extends Activity {
             TextView description = (TextView)row.findViewById(R.id.descriptionTextView);
             TextView amount = (TextView)row.findViewById(R.id.amountTextView);
 
-            id.setText(Integer.toString(transaction.id));
-            timestamp.setText("time");
+            //id.setText(Integer.toString(transaction.id));
+            //timestamp.setText("time");
             category.setText(transaction.category);
             description.setText(transaction.description);
             amount.setText(String.format("%d.%02d €", transaction.amount/100, (transaction.amount - ((transaction.amount/100)*100))));
