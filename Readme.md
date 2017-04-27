@@ -1,5 +1,5 @@
 # Money
-Simple money management app.
+Simple expense tracking app.
 
 Screenshots:
 
